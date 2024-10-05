@@ -1,0 +1,16 @@
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\bin\Debug\net8.0-windows\01_tps_button_sender.exe
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\bin\Debug\net8.0-windows\01_tps_button_sender.deps.json
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\bin\Debug\net8.0-windows\01_tps_button_sender.runtimeconfig.json
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\bin\Debug\net8.0-windows\01_tps_button_sender.dll
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\bin\Debug\net8.0-windows\01_tps_button_sender.pdb
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\_01_tps_button_sender.Form1.resources
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.csproj.GenerateResource.cache
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.AssemblyInfoInputs.cache
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.AssemblyInfo.cs
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.csproj.CoreCompileInputs.cache
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.dll
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\refint\01_tps_button_sender.dll
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.pdb
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.genruntimeconfig.cache
+C:\Users\vecchi.21208\Documents\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\ref\01_tps_button_sender.dll
