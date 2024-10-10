@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vecchi.21208\\Documents\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj": {}
+    "F:\\MRA\\TPS\\C-Tris\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vecchi.21208\\Documents\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj": {
+    "F:\\MRA\\TPS\\C-Tris\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vecchi.21208\\Documents\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj",
+        "projectUniqueName": "F:\\MRA\\TPS\\C-Tris\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj",
         "projectName": "01_tps_button_sender",
-        "projectPath": "C:\\Users\\vecchi.21208\\Documents\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj",
-        "packagesPath": "C:\\Users\\vecchi.21208\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vecchi.21208\\Documents\\01_tps_button_sender\\01_tps_button_sender\\obj\\",
+        "projectPath": "F:\\MRA\\TPS\\C-Tris\\01_tps_button_sender\\01_tps_button_sender\\01_tps_button_sender.csproj",
+        "packagesPath": "C:\\Users\\dadav\\.nuget\\packages\\",
+        "outputPath": "F:\\MRA\\TPS\\C-Tris\\01_tps_button_sender\\01_tps_button_sender\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vecchi.21208\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dadav\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -39,11 +40,15 @@
             button7 = new Button();
             label_fissa_turno = new Label();
             label_turno = new Label();
+            label_fissa_timer = new Label();
+            label_timer = new Label();
+            timer = new System.Windows.Forms.Timer(components);
+            oneSec_timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(50, 50);
             button1.Name = "button1";
             button1.Size = new Size(100, 83);
@@ -53,7 +58,7 @@
             // 
             // button2
             // 
-            button2.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(200, 50);
             button2.Name = "button2";
             button2.Size = new Size(100, 83);
@@ -63,7 +68,7 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(350, 50);
             button3.Name = "button3";
             button3.Size = new Size(100, 83);
@@ -73,7 +78,7 @@
             // 
             // button6
             // 
-            button6.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.Location = new Point(350, 174);
             button6.Name = "button6";
             button6.Size = new Size(100, 83);
@@ -83,7 +88,7 @@
             // 
             // button5
             // 
-            button5.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(200, 174);
             button5.Name = "button5";
             button5.Size = new Size(100, 83);
@@ -93,7 +98,7 @@
             // 
             // button4
             // 
-            button4.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(50, 174);
             button4.Name = "button4";
             button4.Size = new Size(100, 83);
@@ -103,7 +108,7 @@
             // 
             // button9
             // 
-            button9.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button9.Location = new Point(350, 298);
             button9.Name = "button9";
             button9.Size = new Size(100, 83);
@@ -113,7 +118,7 @@
             // 
             // button8
             // 
-            button8.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button8.Location = new Point(200, 298);
             button8.Name = "button8";
             button8.Size = new Size(100, 83);
@@ -123,7 +128,7 @@
             // 
             // button7
             // 
-            button7.Font = new Font("Noto Mono", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.Location = new Point(50, 298);
             button7.Name = "button7";
             button7.Size = new Size(100, 83);
@@ -150,11 +155,44 @@
             label_turno.Size = new Size(0, 21);
             label_turno.TabIndex = 10;
             // 
+            // label_fissa_timer
+            // 
+            label_fissa_timer.AutoSize = true;
+            label_fissa_timer.Font = new Font("Segoe UI", 12F);
+            label_fissa_timer.Location = new Point(568, 112);
+            label_fissa_timer.Name = "label_fissa_timer";
+            label_fissa_timer.Size = new Size(78, 21);
+            label_fissa_timer.TabIndex = 11;
+            label_fissa_timer.Text = "Scade tra ";
+            // 
+            // label_timer
+            // 
+            label_timer.AutoSize = true;
+            label_timer.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_timer.Location = new Point(662, 112);
+            label_timer.Name = "label_timer";
+            label_timer.Size = new Size(0, 21);
+            label_timer.TabIndex = 12;
+            // 
+            // timer
+            // 
+            timer.Enabled = true;
+            timer.Interval = 5000;
+            timer.Tick += timer_Tick;
+            // 
+            // oneSec_timer
+            // 
+            oneSec_timer.Enabled = true;
+            oneSec_timer.Interval = 1000;
+            oneSec_timer.Tick += oneSec_timer_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label_timer);
+            Controls.Add(label_fissa_timer);
             Controls.Add(label_turno);
             Controls.Add(label_fissa_turno);
             Controls.Add(button9);
@@ -186,5 +224,9 @@
         private Button button7;
         private Label label_fissa_turno;
         private Label label_turno;
+        private Label label_fissa_timer;
+        private Label label_timer;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer oneSec_timer;
     }
 }

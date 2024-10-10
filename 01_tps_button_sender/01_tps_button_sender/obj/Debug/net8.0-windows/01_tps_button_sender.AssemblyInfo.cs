@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("01_tps_button_sender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9181cf262a0b50511343db0bed074b685759aa60")]
 [assembly: System.Reflection.AssemblyProductAttribute("01_tps_button_sender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("01_tps_button_sender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
