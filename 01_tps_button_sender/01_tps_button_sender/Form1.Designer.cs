@@ -44,11 +44,16 @@
             label_timer = new Label();
             timer = new System.Windows.Forms.Timer(components);
             oneSec_timer = new System.Windows.Forms.Timer(components);
+            text_vittorie = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label_winX = new Label();
+            label_winO = new Label();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(50, 50);
             button1.Name = "button1";
             button1.Size = new Size(100, 83);
@@ -58,7 +63,7 @@
             // 
             // button2
             // 
-            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(200, 50);
             button2.Name = "button2";
             button2.Size = new Size(100, 83);
@@ -68,7 +73,7 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(350, 50);
             button3.Name = "button3";
             button3.Size = new Size(100, 83);
@@ -78,7 +83,7 @@
             // 
             // button6
             // 
-            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.Location = new Point(350, 174);
             button6.Name = "button6";
             button6.Size = new Size(100, 83);
@@ -88,7 +93,7 @@
             // 
             // button5
             // 
-            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(200, 174);
             button5.Name = "button5";
             button5.Size = new Size(100, 83);
@@ -98,7 +103,7 @@
             // 
             // button4
             // 
-            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(50, 174);
             button4.Name = "button4";
             button4.Size = new Size(100, 83);
@@ -108,7 +113,7 @@
             // 
             // button9
             // 
-            button9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button9.Location = new Point(350, 298);
             button9.Name = "button9";
             button9.Size = new Size(100, 83);
@@ -118,7 +123,7 @@
             // 
             // button8
             // 
-            button8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button8.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button8.Location = new Point(200, 298);
             button8.Name = "button8";
             button8.Size = new Size(100, 83);
@@ -128,7 +133,7 @@
             // 
             // button7
             // 
-            button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Font = new Font("Segoe Script", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.Location = new Point(50, 298);
             button7.Name = "button7";
             button7.Size = new Size(100, 83);
@@ -186,11 +191,69 @@
             oneSec_timer.Interval = 1000;
             oneSec_timer.Tick += oneSec_timer_Tick;
             // 
+            // text_vittorie
+            // 
+            text_vittorie.AutoSize = true;
+            text_vittorie.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_vittorie.ForeColor = Color.IndianRed;
+            text_vittorie.Location = new Point(569, 307);
+            text_vittorie.Name = "text_vittorie";
+            text_vittorie.Size = new Size(111, 21);
+            text_vittorie.TabIndex = 13;
+            text_vittorie.Text = "PARTITE VINTE";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.IndianRed;
+            label1.Location = new Point(569, 340);
+            label1.Name = "label1";
+            label1.Size = new Size(17, 17);
+            label1.TabIndex = 14;
+            label1.Text = "X";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.IndianRed;
+            label2.Location = new Point(568, 364);
+            label2.Name = "label2";
+            label2.Size = new Size(18, 17);
+            label2.TabIndex = 15;
+            label2.Text = "O";
+            // 
+            // label_winX
+            // 
+            label_winX.AutoSize = true;
+            label_winX.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_winX.ForeColor = Color.IndianRed;
+            label_winX.Location = new Point(629, 340);
+            label_winX.Name = "label_winX";
+            label_winX.Size = new Size(0, 17);
+            label_winX.TabIndex = 16;
+            // 
+            // label_winO
+            // 
+            label_winO.AutoSize = true;
+            label_winO.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_winO.ForeColor = Color.IndianRed;
+            label_winO.Location = new Point(629, 364);
+            label_winO.Name = "label_winO";
+            label_winO.Size = new Size(0, 17);
+            label_winO.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label_winO);
+            Controls.Add(label_winX);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(text_vittorie);
             Controls.Add(label_timer);
             Controls.Add(label_fissa_timer);
             Controls.Add(label_turno);
@@ -205,7 +268,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "TRIS";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -228,5 +291,10 @@
         private Label label_timer;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Timer oneSec_timer;
+        private Label text_vittorie;
+        private Label label1;
+        private Label label2;
+        private Label label_winX;
+        private Label label_winO;
     }
 }

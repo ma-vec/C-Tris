@@ -7,6 +7,8 @@ namespace _01_tps_button_sender
         private bool end = false;
         private bool parita = true;
         private string win;
+        private int vittorieX = 0; //Conta le partite vinte
+        private int vittorieO = 0;
         private Random generatore = new Random();
 
         // Variabile di classe per il tempo rimanente
@@ -79,6 +81,7 @@ namespace _01_tps_button_sender
                     if (!parita)
                     { //Vincita
                         win = "Vince " + pulsante.Text;
+                        if(pulsante.Text == "X") { vittorieX++; } else { vittorieO++; } //Incrementa conteggio vittorie
                     }
                     else
                     {
@@ -99,6 +102,9 @@ namespace _01_tps_button_sender
             celleLibere = 9;
             label_fissa_turno.Text = "E' il turno di ";
             label_fissa_timer.Text = "Scade tra ";
+            label_winX.Text = vittorieX.ToString();
+            label_winO.Text = vittorieO.ToString();
+
             if (generatore.Next(2) == 0)
             {
                 turno = "X";
@@ -165,7 +171,7 @@ namespace _01_tps_button_sender
                     {
                         // Se non è una parità, dichiara il vincitore
                         
-                        if(turno=="O") { win = "Vince X"; } else { win = "Vince O"; } //opposto per garantire parità, update eseguito prima
+                        if(turno=="O") { win = "Vince X"; vittorieX++; } else { win = "Vince O"; vittorieO++; } //opposto per garantire parità, update eseguito prima
                     }
                     else
                     {
