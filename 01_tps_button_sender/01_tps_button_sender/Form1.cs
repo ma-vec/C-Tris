@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 namespace _01_tps_button_sender
 {
     public partial class Form1 : Form
@@ -55,7 +56,8 @@ namespace _01_tps_button_sender
             {
                 end = true;
                 parita = false;
-            } else if (celleLibere == 0)
+            }
+            else if (celleLibere == 0)
             {
                 end = true;
                 parita = true;
@@ -63,7 +65,7 @@ namespace _01_tps_button_sender
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             Button pulsante = (Button)sender;   //Per ottenere ID button premuto
             if (pulsante.Text == "")
@@ -73,20 +75,24 @@ namespace _01_tps_button_sender
 
                 CheckEnd();
 
-                
+
                 if (end)
                 {
                     timer.Stop();
                     oneSec_timer.Stop();
+                    label_fissa_turno.Text = "FINE!";
+                    label_turno.Visible = false;
+                    label_fissa_timer.Visible = false;
+                    label_timer.Visible = false;
                     if (!parita)
                     { //Vincita
                         win = "Vince " + pulsante.Text;
-                        if(pulsante.Text == "X") { vittorieX++; } else { vittorieO++; } //Incrementa conteggio vittorie
+                        if (pulsante.Text == "X") { vittorieX++; } else { vittorieO++; } //Incrementa conteggio vittorie
+                        await Task.Delay(600);
+                        fireworks.Visible = true;
                     }
                     else
-                    {
-                        label_fissa_turno.Text = "FINE!";
-                        label_turno.Text = "";
+                    { 
                         win = "Parita'";
                     }
                     MessageBox.Show(win);
@@ -99,12 +105,17 @@ namespace _01_tps_button_sender
         {
             end = false;
             parita = true;
+            timer.Enabled = false;
+            oneSec_timer.Enabled = false;
             celleLibere = 9;
+            fireworks.Visible = false;
             label_fissa_turno.Text = "E' il turno di ";
+            label_turno.Visible = true;
+            label_fissa_timer.Visible = false;
             label_fissa_timer.Text = "Scade tra ";
+            label_timer.Visible = false;
             label_winX.Text = vittorieX.ToString();
             label_winO.Text = vittorieO.ToString();
-
             if (generatore.Next(2) == 0)
             {
                 turno = "X";
@@ -115,47 +126,43 @@ namespace _01_tps_button_sender
             }
 
             label_turno.Text = turno;
-
-            // Resetta tutti i pulsanti
+            button_play.Visible = true;
             foreach (var button in this.Controls.OfType<Button>())
             {
-                button.Text = "";
+                if (button != button_play)
+                {
+                    button.Visible = false;
+                    button.Text = "";
+                }
             }
-
-            // Inizializza il timer e il tempo rimanente
-            timer.Interval = countdownTime * 1000;
-            tempo_rimanente = countdownTime;
-            label_timer.Text = tempo_rimanente.ToString(); // Mostra il tempo iniziale
-            timer.Start();
-            oneSec_timer.Start(); // Avvia il timer
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private async void timer_Tick(object sender, EventArgs e)
         {
-    if (end == false)
-    {
-        int numeroCasuale;
+            if (end == false)
+            {
+                int numeroCasuale;
 
-        // Genera un numero casuale fino a trovare un pulsante vuoto
-        do
-        {
-            numeroCasuale = generatore.Next(9);
-        }
-        while (!PulsanteLibero(numeroCasuale) && end == false);
+                // Genera un numero casuale fino a trovare un pulsante vuoto
+                do
+                {
+                    numeroCasuale = generatore.Next(9);
+                }
+                while (!PulsanteLibero(numeroCasuale) && end == false);
 
-        // Assegna il simbolo al pulsante vuoto trovato
-        switch (numeroCasuale)
-        {
-            case 0: button1.Text = turno; break;
-            case 1: button2.Text = turno; break;
-            case 2: button3.Text = turno; break;
-            case 3: button4.Text = turno; break;
-            case 4: button5.Text = turno; break;
-            case 5: button6.Text = turno; break;
-            case 6: button7.Text = turno; break;
-            case 7: button8.Text = turno; break;
-            case 8: button9.Text = turno; break;
-        }
+                // Assegna il simbolo al pulsante vuoto trovato
+                switch (numeroCasuale)
+                {
+                    case 0: button1.Text = turno; break;
+                    case 1: button2.Text = turno; break;
+                    case 2: button3.Text = turno; break;
+                    case 3: button4.Text = turno; break;
+                    case 4: button5.Text = turno; break;
+                    case 5: button6.Text = turno; break;
+                    case 6: button7.Text = turno; break;
+                    case 7: button8.Text = turno; break;
+                    case 8: button9.Text = turno; break;
+                }
 
                 // Controlla immediatamente se qualcuno ha vinto o se c'è un pareggio
                 UpdateTurno();
@@ -166,18 +173,21 @@ namespace _01_tps_button_sender
                     // Se il gioco è finito, ferma i timer e mostra il messaggio
                     timer.Stop();
                     oneSec_timer.Stop();
+                    label_fissa_turno.Text = "FINE!";
+                    label_turno.Visible = false;
+                    label_fissa_timer.Visible = false;
+                    label_timer.Visible = false;
 
                     if (!parita)
                     {
                         // Se non è una parità, dichiara il vincitore
-                        
-                        if(turno=="O") { win = "Vince X"; vittorieX++; } else { win = "Vince O"; vittorieO++; } //opposto per garantire parità, update eseguito prima
+                        label_fissa_turno.Text = "FINE!";
+                        if (turno == "O") { win = "Vince X"; vittorieX++; } else { win = "Vince O"; vittorieO++; } //opposto per garantire parità, update eseguito prima
+                        await Task.Delay(600);
+                        fireworks.Visible = true;
                     }
                     else
                     {
-                        // In caso di parità
-                        label_fissa_turno.Text = "FINE!";
-                        label_turno.Text = "";
                         win = "Parita'";
                     }
 
@@ -185,14 +195,14 @@ namespace _01_tps_button_sender
                     MessageBox.Show(win);
                     Form1_Load(this, e); // Ricomincia il gioco
                 }
-                
-    }
-}
+
+            }
+        }
 
 
         private void oneSec_timer_Tick(object sender, EventArgs e)
         {
-            
+
             // Decrementa il tempo rimanente
             tempo_rimanente--;
             // Aggiorna l'etichetta con il tempo rimanente
@@ -210,7 +220,7 @@ namespace _01_tps_button_sender
         {
             switch (indice)
             {
-                case 0: return string.IsNullOrEmpty(button1.Text);
+                case 0: return string.IsNullOrEmpty(button1.Text); //bool metodo di una stringa. True se vuoto
                 case 1: return string.IsNullOrEmpty(button2.Text);
                 case 2: return string.IsNullOrEmpty(button3.Text);
                 case 3: return string.IsNullOrEmpty(button4.Text);
@@ -223,5 +233,28 @@ namespace _01_tps_button_sender
             }
         }
 
+        private void button_play_Click(object sender, EventArgs e)
+        {
+            fireworks.Visible = false;
+            label_fissa_timer.Visible = true;
+            label_timer.Visible=true;
+            label_fissa_turno.Visible = true;
+            label_turno.Visible=true;
+            button_play.Visible = false;
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+                if (button != button_play)
+                {
+                    button.Visible = true;
+                }
+            }
+
+            // Inizializza il timer e il tempo rimanente
+            timer.Interval = countdownTime * 1000;
+            tempo_rimanente = countdownTime;
+            label_timer.Text = tempo_rimanente.ToString(); // Mostra il tempo iniziale
+            timer.Start();
+            oneSec_timer.Start(); // Avvia il timer
+        }
     }
 }

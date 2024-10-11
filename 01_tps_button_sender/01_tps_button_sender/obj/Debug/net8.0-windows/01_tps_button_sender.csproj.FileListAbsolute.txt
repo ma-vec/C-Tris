@@ -31,3 +31,4 @@ F:\MRA\TPS\C-Tris\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-win
 F:\MRA\TPS\C-Tris\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.pdb
 F:\MRA\TPS\C-Tris\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\01_tps_button_sender.genruntimeconfig.cache
 F:\MRA\TPS\C-Tris\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\ref\01_tps_button_sender.dll
+F:\MRA\TPS\C-Tris\01_tps_button_sender\01_tps_button_sender\obj\Debug\net8.0-windows\_01_tps_button_sender.Properties.Resources.resources

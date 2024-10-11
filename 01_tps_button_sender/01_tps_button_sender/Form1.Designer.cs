@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -49,6 +50,9 @@
             label2 = new Label();
             label_winX = new Label();
             label_winO = new Label();
+            button_play = new Button();
+            fireworks = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)fireworks).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -154,7 +158,7 @@
             // label_turno
             // 
             label_turno.AutoSize = true;
-            label_turno.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_turno.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_turno.Location = new Point(662, 68);
             label_turno.Name = "label_turno";
             label_turno.Size = new Size(0, 21);
@@ -205,22 +209,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.IndianRed;
             label1.Location = new Point(569, 340);
             label1.Name = "label1";
-            label1.Size = new Size(17, 17);
+            label1.Size = new Size(19, 20);
             label1.TabIndex = 14;
             label1.Text = "X";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.IndianRed;
             label2.Location = new Point(568, 364);
             label2.Name = "label2";
-            label2.Size = new Size(18, 17);
+            label2.Size = new Size(19, 20);
             label2.TabIndex = 15;
             label2.Text = "O";
             // 
@@ -244,11 +248,35 @@
             label_winO.Size = new Size(0, 17);
             label_winO.TabIndex = 17;
             // 
+            // button_play
+            // 
+            button_play.BackColor = Color.FromArgb(0, 192, 0);
+            button_play.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_play.ForeColor = SystemColors.ButtonHighlight;
+            button_play.Location = new Point(50, 181);
+            button_play.Name = "button_play";
+            button_play.Size = new Size(400, 56);
+            button_play.TabIndex = 18;
+            button_play.Text = "PLAY";
+            button_play.UseVisualStyleBackColor = false;
+            button_play.Click += button_play_Click;
+            // 
+            // fireworks
+            // 
+            fireworks.Image = (Image)resources.GetObject("fireworks.Image");
+            fireworks.Location = new Point(50, 12);
+            fireworks.Name = "fireworks";
+            fireworks.Size = new Size(400, 426);
+            fireworks.TabIndex = 19;
+            fireworks.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(fireworks);
+            Controls.Add(button_play);
             Controls.Add(label_winO);
             Controls.Add(label_winX);
             Controls.Add(label2);
@@ -270,6 +298,7 @@
             Name = "Form1";
             Text = "TRIS";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)fireworks).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,5 +325,7 @@
         private Label label2;
         private Label label_winX;
         private Label label_winO;
+        private Button button_play;
+        private PictureBox fireworks;
     }
 }
